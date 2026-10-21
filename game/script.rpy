@@ -47,6 +47,9 @@ transform char_rightmost:
     yalign 1.0
     zoom 0.65
 
+transform invert_x:
+    xzoom -1
+
 
 #Definindo estilos para pensamentos, gritos etc
 style sussurro:
@@ -67,5 +70,3 @@ style grito:
 label start:
 
 jump main_route.scene_1
-#jump juliano_route.scene_2
-    
