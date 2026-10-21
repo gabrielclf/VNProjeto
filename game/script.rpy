@@ -42,15 +42,21 @@ transform char_right:
     yalign 1.0
     zoom 0.65
 
-transform char_righmost:
-    xalign 1.5
+transform char_rightmost:
+    xalign 1.05
     yalign 1.0
     zoom 0.65
 
 
 #Definindo estilos para pensamentos, gritos etc
-style sussuro:
+style sussurro:
     italic True
+    size 24
+
+style pensamento:
+    italic True
+    color "#62626d"
+
 style grito:
     size 40
     bold True
