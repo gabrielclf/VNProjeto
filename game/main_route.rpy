@@ -159,7 +159,7 @@ label main_route.scene_5:
     narrador "Estava curioso quanto aos laboratórios de informática quando minha atenção foi dissipada pela informação de que havia um aluno desaparecido."
     j "Ah, eu preciso colher depoimentos sobre isso pra uma matéria pro jornal. Quer me acompanhar?"
 
-label main_route.scene_6
+label main_route.scene_6:
     ## CENA 6: Decisão 1
     menu:
         "O que devo fazer?"
@@ -168,4 +168,4 @@ label main_route.scene_6
         "Ir encontrar Ramon para pegar o livro":
             jump ramon_route.cena_1
         "Voltar de carona com Diego":
-            jump diego_route.scene1
+            jump diego_route.scene_1
