@@ -1,20 +1,28 @@
-label juliano_route.cena_1:
+label juliano_route.scene_1:
     #Cena 6.1 rotajuliano
     #(Campus, Guilherme e Juliano)
-
-    g "Não vi motivos para descartar o convite do Juliano então o segui para ajudar com a proposta."
-    g "Não havia me atentado que era realmente um assunto que estava a todo vapor entre os alunos e aparentemente todo corpo docente."
-    g "Enquanto caminhávamos eu o escutava falar que existia um boato sobre o veterano desaparecido, algo como um desentendimento com um outro rapaz da educação física, as características me fizeram pensar em Diego e embora eu o conheça há muito tempo, mas não tenha contato com ele, não consigo imaginá-lo presente nesse tipo de discussão, mas será?"
+    scene bg uneb_dcv with fade
+    show guilherme at char_center
+    g "{=pensamento}Não vi motivos para descartar o convite do Juliano então o segui para ajudar com a proposta."
+    g "{=pensamento}Não havia me atentado que era realmente um assunto que estava a todo vapor entre os alunos e aparentemente todo corpo docente."
+    g "{=pensamento}Enquanto caminhávamos eu o escutava falar que existia um boato sobre o veterano desaparecido, algo como um desentendimento com um outro rapaz da educação física..."
+    g "{=pensamento}As características me fizeram pensar em Diego e embora eu o conheça há muito tempo, mas não tenha contato com ele, não consigo imaginá-lo presente nesse tipo de discussão, mas será?"
 
     #(Quarto de Guilherme)
-
-    g "Eu me sinto meio estranho desde ontem, descobrir aquelas informações sobre o desaparecimento de um aluno e as características do estudante de educação física que ele teve um desentendimento antes de sumir me dão um nó no estômago."
+    scene bg gui_room with fade
+    show guilherme at char_center with dissolve
+    g "{=pensamento}Eu me sinto meio estranho desde ontem, descobrir aquelas informações sobre o desaparecimento de um aluno e as características do estudante de educação física que ele teve um desentendimento antes de sumir me dão um nó no estômago."
     g "Diego seria capaz de algo assim? Por qual motivo? Mas é só um boato…"
 
     #(Campus, Guilherme e Diego)
-
+    scene bg uneb_entrance with fade
+    show guilherme at char_leftmost with dissolve
     g "Nossa, tem um tempo até minha aula começar. Vou caminhar um pouco até dar o horário."
+    pause 1.5
+    scene bg uneb_dcv with fade
+    show guilherme at char_leftmost
     d "Guilherme!"
+    show diego at char_rightmost with dissolve
     g "Ah, oi Diego."
     d "Você sumiu ontem e não respondeu sobre a carona de hoje. Aconteceu alguma coisa?"
     g "Ahh… Não… Eu não queria incomodar mesmo…"
@@ -27,11 +35,11 @@ label juliano_route.cena_1:
     d "Ah, vou ter um treino hoje antes de voltar pra casa, se quiser pode ir assistir e a gente volta junto."
     g "Beleza."
 
-label juliano_route.cena_2:
+label juliano_route.scene_2:
 #Cena 8.1 Rota Juliano
 #CENÁRIO - Campus
 #	PERSONAGENS - Guilherme, Juliano
-
+    
     g "Acho que o Ramon quer ficar sozinho. Vou encontrar com o Juliano, talvez ele saiba o que aconteceu."
     g "Juliano!"
     j "Olha só quem apareceu! Veio me fazer companhia de novo?"
