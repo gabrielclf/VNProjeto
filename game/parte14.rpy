@@ -1,5 +1,4 @@
 label parte_14:
-    "Testando {i} como deixar texto em itálico {/i}, {b}em negrito{/b} e também {size=-10} como deixar pequeniniho{/size}"
     "Depois de encontrar Juliano desesperado, Guilherme fica pensativo após ele relatar que tem recebido ameaças nas redes sociais."
 
     g "A situação no campus está ficando fora de controle
@@ -21,7 +20,7 @@ label investigarCafeteria:
 
     "Guilherme se aproxima apressado para falar com ele."
 
-    g {=grito}"Ramon!"
+    g "{=grito}Ramon!"
     g "Ainda bem que te encontrei aqui na frente. Eu estava te procurando"
     r "..."
     g "Aconteceu alguma coisa? Você tá com uma cara estranha…"
