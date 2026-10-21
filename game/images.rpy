@@ -21,6 +21,13 @@ layeredimage ramon:
         attribute neutral default:
             "images/characters/ramon_neutral.png"
 
+layeredimage juliano:
+    at sprite_highlight("juliano")
+
+    group expression:
+        attribute neutral default:
+            "images/characters/juliano_neutral.png"
+
 # --- Scenes ----------
 
 image bg placeholder = Transform("images/scenes/bg placeholder.jpeg", xysize=(1920, 1080))
