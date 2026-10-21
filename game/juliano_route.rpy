@@ -1,4 +1,5 @@
 label juliano_route.cena_1:
+    #Cena 6.1 rotajuliano
     #(Campus, Guilherme e Juliano)
 
     g "Não vi motivos para descartar o convite do Juliano então o segui para ajudar com a proposta."
@@ -25,4 +26,35 @@ label juliano_route.cena_1:
     g "Entendi."
     d "Ah, vou ter um treino hoje antes de voltar pra casa, se quiser pode ir assistir e a gente volta junto."
     g "Beleza."
+
+label juliano_route.cena_2:
+#Cena 8.1 Rota Juliano
+#CENÁRIO - Campus
+#	PERSONAGENS - Guilherme, Juliano
+
+    g "Acho que o Ramon quer ficar sozinho. Vou encontrar com o Juliano, talvez ele saiba o que aconteceu."
+    g "Juliano!"
+    j "Olha só quem apareceu! Veio me fazer companhia de novo?"
+    g "Talvez. Mas, dessa vez, vim falar de outra coisa."
+    j "O que foi?"
+    g "Você me mandou uma mensagem falando sobre um estudante. Sabe o que aconteceu?"
+    "Juliano ficou mais sério e olhou ao redor antes de me responder."
+    j "Ouvi umas coisas por aí. Parece que o Ramon se envolveu com gente errada."
+    g "O Ramon? Você tá falando do Ramon da Psicologia?"
+    j "Esse mesmo. Dizem que ele tava andando com pessoas envolvidas com drogas. Não sei se é verdade, mas foi o que chegou até mim."
+    g "Você tá dizendo que ele usa drogas?"
+    j "Tô dizendo que ouvi rumores. É diferente. Não vou afirmar algo que não posso provar."
+    g "Hoje encontrei o Ramon machucado... Ele parecia desorientado e ficou muito agressivo comigo."
+    j "Sério? Então talvez tenha acontecido alguma coisa mesmo."
+    g "Você sabe quem poderia estar envolvido?"
+    j "Não faço ideia. Mas, se alguém tá tentando esconder alguma coisa, talvez seja melhor prestar atenção em quem anda fazendo perguntas demais."
+    g "Como assim?"
+    j "Só tô dizendo que nem todo mundo gosta de ser investigado, Guilherme. Principalmente quando tem algo a perder."
+    "Eu senti um arrepio na espinha quando ele disse isso. Acho que ele percebeu e tentou voltar ao tom descontraído. Talvez ele só esteja evitando aprofundar o assunto."
+    "O Juliano parece saber mais do que tá dizendo. Ainda assim, os rumores sobre Ramon podem ser apenas fofocas. Preciso separar o que é fato do que é especulação."
+    g "Valeu por me contar. Vou tentar descobrir o que realmente aconteceu."
+    j "Só toma cuidado, tá? Não quero que você acabe se metendo em problemas."
+    g "Eu me despedi dele, mas continuo pensando nas palavras de Juliano."
+
+
 
