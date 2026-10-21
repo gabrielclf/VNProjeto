@@ -67,5 +67,5 @@ style grito:
 label start:
 
 jump main_route.scene_1
-#jump juliano_route.scene_1
+#jump juliano_route.scene_2
     
