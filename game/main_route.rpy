@@ -207,7 +207,7 @@ label main_route.scene_7:
 
     j_nvl "Guilherme, você soube do que aconteceu com um estudante?"
     j_nvl "Parece que a situação foi bem séria."
-    call close_phone
+    call close_phone from _call_close_phone
 
     g "{=pensamento}\"Primeiro o desaparecimento do veterano, agora Ramón aparece machucado. E Juliano parece saber de alguma coisa. Preciso descobrir o que tá acontecendo..."
 
