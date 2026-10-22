@@ -28,6 +28,20 @@ layeredimage juliano:
         attribute neutral default:
             "images/characters/juliano_neutral.png"
 
+layeredimage caio:
+    at sprite_highlight("caio")
+
+    group expression:
+        attribute neutral default:
+            "images/characters/professor_caio.png"
+
+layeredimage marcelo:
+    at sprite_highlight("marcelo")
+
+    group expression:
+        attribute neutral default:
+            "images/characters/professor_marcelo.png"
+
 # --- Scenes ----------
 
 image bg placeholder = Transform("images/scenes/bg placeholder.jpeg")

@@ -53,13 +53,29 @@ label main_route.scene_3:
     ## CENA 3: Final da Aula de Roteiro, indicação de bibliografia
     scene bg classroom with fade
 
-    show guilherme at char_leftmost with dissolve
-    
-    $ sec_name = "Professor Caio"
-    sec "Certinho, minha gente? Terminamos por hoje."
-    sec "Ah, Guilherme, você tinha pedido a bibliografia sobre arquétipos e tá aqui!"
-    sec "Você pode usar o livro \"O Homem e seus Símbolos\" de Carl Jung, ou \"A Jornada do Herói\" de Joseph Campbell."
-    sec "O de Jung você encontra na biblioteca, na seção de Psicologia."
+    show guilherme:
+        xalign 0.25
+        xanchor 0.5
+        zoom 0.55
+        yalign 1.2
+    show caio:
+        xalign 0.75
+        xanchor 0.5
+        yalign 1.0
+        zoom 0.6
+    with dissolve
+
+    caio "Certinho, minha gente? Terminamos por hoje."
+    caio "Ah, Guilherme, você tinha pedido a bibliografia sobre arquétipos e tá aqui!"
+    caio "Você pode usar o livro \"O Homem e seus Símbolos\" de Carl Jung, ou \"A Jornada do Herói\" de Joseph Campbell."
+    caio "O de Jung você encontra na biblioteca, na seção de Psicologia."
+
+    show guilherme:
+        parallel:
+            ease 0.2 zoom 0.6
+        parallel:
+            ease 0.2 yalign 1.0
+
     g "Ah! Professor! Muito obrigado! Vou lá agora mesmo."
 
 label main_route.scene_4:
@@ -164,9 +180,9 @@ label main_route.scene_6:
     menu:
         "O que devo fazer?"
         "Ir coletar depoimentos sobre o garoto desaparecido com Juliano":
-            jump juliano_route.scene_1
+            jump juliano_route.scene_6_1
         "Ir encontrar Ramón para pegar o livro":
-            jump ramon_route.scene_1
+            jump ramon_route.scene_6_2
         "Voltar de carona com Diego":
             jump diego_route.scene_6_3
 
@@ -186,11 +202,13 @@ label main_route.scene_7:
     r "Eu já disse que tá tudo bem! Para de insistir!"
     narrador "Ele levantou com dificuldade."
     g "{=pensamento}\"Isso não faz sentido... Ramón pode ser reservado, mas nunca imaginei que ele reagiria assim. Acho que ele não gosta de ser visto nessa situação. Será que aconteceu algo grave?"
-    narrador "{=sussurro}*Vrrrrrr*"
-    g "{=pensamento}\"Uma mensagem do Juliano.\""
-    show screen mensagem_celular("Juliano: Guilherme, você soube do que aconteceu com um estudante? Parece que a situação foi bem séria.")
-    $ renpy.pause(3.0, hard=True)
-    hide screen mensagem_celular
+    narrador "{=sussurro}*Vrrrrrr* {w=0.1} *Vrrrrrr*"
+    g "{=pensamento}\"Uma mensagem do Juliano...\""
+
+    j_nvl "Guilherme, você soube do que aconteceu com um estudante?"
+    j_nvl "Parece que a situação foi bem séria."
+    call close_phone
+
     g "{=pensamento}\"Primeiro o desaparecimento do veterano, agora Ramón aparece machucado. E Juliano parece saber de alguma coisa. Preciso descobrir o que tá acontecendo..."
 
 label main_route.scene_8:
@@ -201,11 +219,9 @@ label main_route.scene_8:
 
     menu:
         "Encontrar Juliano e investigar as informações que ele recebeu":
-            jump juliano_route.scene_2
+            jump juliano_route.scene_8_1
         "Continuar com Ramón":
-            # TODO: consertart aq pq ainda tá sem a ramon_route.scene_2
-            # jump ramon_route.scene_2
-            jump main_route.scene_9
+            jump ramon_route.scene_8_2
         "Ir ao treino de Diego e conversar com ele sobre Ramón":
             jump diego_route.scene_8_3
 
@@ -223,7 +239,7 @@ label main_route.scene_10:
     ## CENA 10:
     scene bg classroom with fade
 
-    show guilherme at char_leftmost
+    show guilherme at char_leftmost with dissolve
 
     $ sec_name = "Professor Marcelo"
     sec "Meu povo! Pra próxima aula vocês vão desenhar a concept art de um toco no blender em 2D."
@@ -256,9 +272,111 @@ label main_route.scene_11:
     j "Não. A conta é praticamente vazia. E, quando tentei responder, a pessoa apagou algumas mensagens e parou de falar comigo por um tempo."
     g "Você guardou as mensagens anteriores?"
     j "Algumas… Tirei print da tela antes que desaparecessem."
-    g "{=pensamento}\"Isso não parece uma simples brincadeira. Alguém quer impedir Juliano de falar. Mas o que exatamente ele sabe? E será que essa pessoa também tem alguma ligação com o que aconteceu com Ramon?\""
+    g "{=pensamento}\"Isso não parece uma simples brincadeira. Alguém quer impedir Juliano de falar. Mas o que exatamente ele sabe? E será que essa pessoa também tem alguma ligação com o que aconteceu com Ramón?\""
     g "Juliano, precisamos tomar cuidado. Não apaga nada e não tenta confrontar essa pessoa sozinho."
     j "Eu sei. Mas, sinceramente, tô começando a ficar com medo."
     g "Vamos descobrir quem tá por trás disso. Só precisamos fazer as coisas direito."
-    g "{=pensamento}\"O desaparecimento do veterano, os ferimentos de Ramon e agora as ameaças contra Juliano...\""
+    g "{=pensamento}\"O desaparecimento do veterano, os ferimentos de Ramón e agora as ameaças contra Juliano...\""
     g "{=pensamento}\"Talvez tudo isso esteja conectado. E, se estiver, alguém tá fazendo de tudo pra que a verdade não venha à tona.\""
+
+label main_route.scene_12:
+    ## CENA 12: 
+    ## CENÁRIO - 
+    ## PERSONAGENS - Guilherme
+    scene black with fade
+
+    menu:
+        g "{=pensamento}\"A situação no campus está ficando fora de controle. Ramón foi atacado, Juliano está sendo ameaçado e há um veterano desaparecido. Preciso tomar uma atitude hoje mesmo. Por onde devo começar?\""
+        "Investigar as ameaças na rede social com Juliano":
+            jump juliano_route.scene_12_1
+        "Investigar o bar onde Ramón foi dopado":
+            jump ramon_route.scene_12_2
+        "Investigar com o Diego a quadra onde o garoto desapareceu":
+            jump diego_route.scene_12_3
+
+label main_route.scene_13:
+    ## CENA 13: 
+    ## CENÁRIO - Rádio Universitária
+    ## PERSONAGENS - Guilherme, Juliano
+    g "Confessa, Juliano! Você armou tudo!"
+    narrador "Eu estou muito nervoso, bati com uma mão em um botão e a porta da sala se trancou bruscamente e uma luz vermelha no microfone ficou piscando freneticamente."
+    narrador "A postura solar, alegre e acolhedora de Juliano se desmorona por completo em segundos..."
+    narrador "Sua expressão fica entre o desespero e uma obsessão doentia, com lágrimas quentes escorrendo pelo rosto enquanto ele dá uma risada histérica. Eu nunca tinha visto ele assim."
+    j "{=grito}{cps=10}SIM!{/cps}{/=grito}{w=0.4} Fui eu! Fui eu que fiz tudo, Guilherme! O envenenamento na cafeteria, os boatos pelo campus, o sumiço daquele veterano nojento...{w=.8} {cps=10}{sc=3}{b}EU FIZ TUDO{/b}{/sc}{/cps} {cps=5}{sc=3}{b}POR{/b}{/sc}{/cps} {cps=3}{sc=3}{b}VOCÊ!{/b}{/sc}{/cps}"
+    narrador "Eu dei um passo pra trás, horrorizado com a reação dele."
+    g "Você enlouqueceu de vez, Juliano?! Por que diabos você faria uma crueldade dessas?!"
+    j "{cps=10}{sc=5}{b}Porque eu te amo!{/b}{/sc}{/cps}{w=0.6} Eu estou completamente apaixonado por você desde o primeiro segundo em que você pisou nesse campus, na matrícula!"
+    j "Eu fiz de tudo pra ser o cara perfeito pra você! Mas você não parava de olhar pros outros..."
+    j "Ficava dando atenção pro idiota do Diego, pro ranzinza do Ramón! Até aquele seu veterano que postava sobre você..."
+    j "Eu só estava protegendo o nosso amor, Guilherme! Eu limpei o caminho pra gente ficar junto!"
+    g "Isso não é amor, Juliano! Isso é loucura!"
+    j "Se você não ficar comigo...{w=0.4} Se você me rejeitar depois de tudo o que eu fiz...{w=0.4} {cps=15}{sc=5}{b}EU JURO QUE ACABO COM OS DOIS!{/b}{/sc}{/cps}{w=0.8} Ninguém mais vai ter você se não for {cps=2}eu...{/cps}"
+
+label main_route.scene_14:
+    ## CENA 14: 
+    ## CENÁRIO - Rádio Universitária
+    ## PERSONAGENS - Guilherme, Juliano, Ramón e Diego
+    show guilherme at smooth_invert_x
+
+    narrador "Ouvi um estrondo. A porta da Sala da Rádio foi arrombada."
+    
+    show guilherme:
+        xanchor 0.5
+        xzoom -1
+        parallel:
+            ease 0.8 xalign 0.55
+        parallel:
+            ease 0.8 zoom 0.6
+    show juliano:
+        zoom 0.65
+        xanchor 0.5
+        parallel:
+            ease 0.8 xalign 1.1
+        parallel:
+            ease 0.8 zoom 0.6
+    show ramon:
+        xalign -.5
+        xanchor .5
+        zoom 0.6
+        yalign 1.0
+        xzoom -1
+        parallel:
+            ease 0.8 xalign -0.2
+    show diego:
+        xalign -.5
+        xanchor .5
+        zoom 0.6
+        yalign 1.0
+        xzoom -1
+        parallel:
+            ease 0.8 xalign 0.15
+    
+
+
+    narrador "Diego entra na frente, arfando e com os punhos fechados em pura fúria, seguido de perto por Ramón, que tenta manter o controle apesar do pavor."
+    d "Sai de perto dele, seu maluco!"
+    d "Guilherme... eu sei que passei anos me afastando de você, mas era porque eu não sabia lidar com o que sentia por você desde quando a gente era criança{cps=4}...{/cps}"
+    d "Eu te amo! E eu não vou deixar {b}NINGUÉM{/b} te machucar!"
+    g "{=pensamento}\"O quê?!\""
+    narrador "Eu nem consegui reagir ao que ele disse. Estou em choque com toda a situação."
+    narrador "Olhei pra Ramón e sua expressão séria e racional desmoronou por completo. Ele está trêmulo..."
+    r "Guilherme... Eu achava que a Psicologia, os livros e a minha bolha eram tudo o que eu precisava pra viver. Mas você mudou tudo..."
+    r "Você me ensinou a abrir meu coração e a sentir de verdade. Não dê ouvidos a esse manipulador nojento! É com você que eu quero estar!"
+    show guilherme at smooth_uninvert_x
+    j "Hahaha!{w=0.4} Olhe só pra eles, Guilherme!{w=0.2} Que cena mais patética!{w=0.6} Escolha!{w=0.2} Mas lembra bem do que eu te falei:{w=0.6} Se você não me escolher...{w=0.2} a vida desses dois nunca mais vai ser segura!"
+
+label main_route.scene_15:
+    ## CENA 15: 
+    ## CENÁRIO - Rádio Universitária
+    ## PERSONAGENS - Guilherme
+
+    g "{=pensamento}\"Eu não estou conseguindo processar o que está acontecendo. Nada faz sentido... Mas preciso tomar uma decisão logo...\""
+
+    menu:
+        g "{=pensamento}\"Eu não tenho dúvidas! A pessoa com quem eu preciso ficar é..."
+        "Ficar com o Juliano":
+            jump juliano_route.scene_15_1
+        "Ficar com o Ramón":
+            jump ramon_route.scene_15_2
+        "Ficar com o Diego":
+            jump diego_route.scene_15_3
