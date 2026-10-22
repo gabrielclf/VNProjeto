@@ -1,8 +1,14 @@
 label juliano_route.scene_1:
+    ## Scripts
+    # Guilherme avança para a direita
+    transform guilherme_caminhar:
+        xoffset 0
+        ease 1.4 xoffset 400
+    
     #Cena 6.1 rotajuliano
     #(Campus, Guilherme e Juliano)
     scene bg uneb_dcv with fade
-    show guilherme at char_center
+    show guilherme at char_center with dissolve
     narrador "{=pensamento}Não vi motivos para descartar o convite do Juliano então o segui para ajudar com a proposta."
     narrador "{=pensamento}Não havia me atentado que era realmente um assunto que estava a todo vapor entre os alunos e aparentemente todo corpo docente."
     narrador "{=pensamento}Enquanto caminhávamos eu o escutava falar que existia um boato sobre o veterano desaparecido, algo como um desentendimento com um outro rapaz da educação física..."
@@ -17,8 +23,9 @@ label juliano_route.scene_1:
     #(Campus, Guilherme e Diego)
     scene bg uneb_entrance with fade
     show guilherme at char_leftmost with dissolve
-    g "Nossa, tem um tempo até minha aula começar. Vou caminhar um pouco até dar o horário."
-    pause 1.5
+    g "Nossa, tem um tempo até minha aula começar. Vou caminhar um pouco até dar o horário."    
+    show guilherme at guilherme_caminhar
+    $ renpy.pause(0.3, hard=True)
     scene bg uneb_dcv with fade
     show guilherme at char_leftmost
     d "Guilherme!"
@@ -34,6 +41,8 @@ label juliano_route.scene_1:
     g "Entendi."
     d "Ah, vou ter um treino hoje antes de voltar pra casa, se quiser pode ir assistir e a gente volta junto."
     g "Beleza."
+
+    jump main_route.scene_7
 
 label juliano_route.scene_2:
 #Cena 8.1 Rota Juliano
@@ -72,5 +81,5 @@ label juliano_route.scene_2:
     hide juliano char_rightmost with dissolve
     narrador "{=pensamento}Eu me despedi dele, mas continuo pensando nas palavras de Juliano."
 
-
+    jump main_route.scene_9
 

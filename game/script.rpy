@@ -63,6 +63,23 @@ style pensamento:
 style grito:
     size 40
     bold True
+
+
+## Tava testando, não ficou legal, vou tirar.
+screen mensagem_celular(texto):
+    frame:
+        xalign 0.05
+        yalign 0.15
+        xmaximum 600
+        padding (20, 14)
+        background Frame(
+            Solid("#292B30"),
+            12, 12
+        )
+
+        text texto:
+            size 24
+            color "#F1F1F1"
    
 
 # The game starts here.

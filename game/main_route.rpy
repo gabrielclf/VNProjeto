@@ -53,7 +53,7 @@ label main_route.scene_3:
     ## CENA 3: Final da Aula de Roteiro, indicação de bibliografia
     scene bg classroom with fade
 
-    show guilherme at char_leftmost
+    show guilherme at char_leftmost with dissolve
     
     $ sec_name = "Professor Caio"
     sec "Certinho, minha gente? Terminamos por hoje."
@@ -71,7 +71,7 @@ label main_route.scene_4:
     transform esbarra_guilherme_2:
         ease 0.8 xoffset 360
 
-    # Ramon vem da direita e avança até o Guilherme
+    # Ramón vem da direita e avança até o Guilherme
     transform entrada_ramon:
         xoffset 900
         ease 0.7 xoffset -220
@@ -86,7 +86,7 @@ label main_route.scene_4:
             #ease 0.08 xoffset 145
             ease 0.12 xoffset 60
 
-    # Recuo do Ramon, partindo da posição do impacto
+    # Recuo do Ramón, partindo da posição do impacto
     transform recuo_ramon:
         parallel:
             ease 0.08 yoffset -30
@@ -134,7 +134,7 @@ label main_route.scene_4:
 label main_route.scene_5:
     ## CENA 5: Passeio pelo Campus
 
-    scene bg uneb_entrance with fade
+    scene bg uneb_dcv with fade
 
     show guilherme at char_leftmost with dissolve
 
@@ -164,8 +164,101 @@ label main_route.scene_6:
     menu:
         "O que devo fazer?"
         "Ir coletar depoimentos sobre o garoto desaparecido com Juliano":
-            jump juliano_route.cena_1
-        "Ir encontrar Ramon para pegar o livro":
-            jump ramon_route.cena_1
+            jump juliano_route.scene_1
+        "Ir encontrar Ramón para pegar o livro":
+            jump ramon_route.scene_1
         "Voltar de carona com Diego":
-            jump diego_route.scene_1
+            jump diego_route.scene_6_3
+
+label main_route.scene_7:
+    ## CENA 7: 
+    scene bg uneb_dcv with fade
+
+    show guilherme at char_leftmost with dissolve
+    g "{=pensamento}\"Minhas aulas de hoje acabaram, pra voltar de carona preciso esperar o treino do Diego acabar pra... {w=1}Ué... {w=0.3}Tem um rapaz sentado meio desorientado ali... Com alguns hematomas...\""
+    show ramon at char_rightmost with dissolve
+    g "Ramón?? Ei, cara! O que aconteceu com você?"
+    narrador "Ele levantou a cabeça lentamente e parece tentar me reconhecer. Ele parece muito confuso."
+    r "O quê? Ah... É você."
+    g "Você tá machucado! Alguém fez isso com você?"
+    r "Não é da sua conta."
+    g "Calma, só tô tentando ajudar. Você parece estar passando mal."
+    r "Eu já disse que tá tudo bem! Para de insistir!"
+    narrador "Ele levantou com dificuldade."
+    g "{=pensamento}\"Isso não faz sentido... Ramón pode ser reservado, mas nunca imaginei que ele reagiria assim. Acho que ele não gosta de ser visto nessa situação. Será que aconteceu algo grave?"
+    narrador "{=sussurro}*Vrrrrrr*"
+    g "{=pensamento}\"Uma mensagem do Juliano.\""
+    show screen mensagem_celular("Juliano: Guilherme, você soube do que aconteceu com um estudante? Parece que a situação foi bem séria.")
+    $ renpy.pause(3.0, hard=True)
+    hide screen mensagem_celular
+    g "{=pensamento}\"Primeiro o desaparecimento do veterano, agora Ramón aparece machucado. E Juliano parece saber de alguma coisa. Preciso descobrir o que tá acontecendo..."
+
+label main_route.scene_8:
+    ## CENA 8:
+    scene black with fade
+
+    g "{=pensamento}\"Tenho algumas opções. Posso tentar conversar com Ramón de novo, procurar Juliano pra entender o que ele sabe ou ir ao treino com Diego e pedir a ajuda dele."
+
+    menu:
+        "Encontrar Juliano e investigar as informações que ele recebeu":
+            jump juliano_route.scene_2
+        "Continuar com Ramón":
+            # TODO: consertart aq pq ainda tá sem a ramon_route.scene_2
+            # jump ramon_route.scene_2
+            jump main_route.scene_9
+        "Ir ao treino de Diego e conversar com ele sobre Ramón":
+            jump diego_route.scene_8_3
+
+label main_route.scene_9:
+    ## CENA 9:
+    scene bg uneb_entrance with fade
+    show guilherme at char_leftmost with dissolve
+
+    g "{=pensamento}\"Nossa, ontem foi um dia complicado. Mas eu não posso ignorar o que aconteceu. Preciso investigar melhor o caso...\""
+    g "{=pensamento}\"Primeiro, preciso confirmar os fatos. Descobrir onde Ramón esteve, com quem falou e se alguém viu alguma coisa...\""
+    g "{=pensamento}\"Também preciso entender se isso tem alguma relação com o desaparecimento do veterano...\""
+    g "{=pensamento}\"Se alguém tá por trás disso, uma hora vai cometer algum erro. E eu vou descobrir.\""
+
+label main_route.scene_10:
+    ## CENA 10:
+    scene bg classroom with fade
+
+    show guilherme at char_leftmost
+
+    $ sec_name = "Professor Marcelo"
+    sec "Meu povo! Pra próxima aula vocês vão desenhar a concept art de um toco no blender em 2D."
+    sec "Não esqueçam de colocar no drive porque a gente vai usar ele na próxima aula pra modelar o nosso toco, beleza? Liberados!"
+    g "Value, Professor Marcelo!"
+
+label main_route.scene_11:
+    ## CENA 11:
+    scene bg school_corridor with fade
+
+    show guilherme at char_leftmost with dissolve
+
+    g "{=pensamento}\"Eu sou péssimo nas aulas de Arte, mas elas são divertidas…\""
+
+    show juliano at char_rightmost with dissolve
+    g "{=pensamento}\"Ah, o Juliano está bem ali. O que ele pode estar fazendo aqui? Hmmm, ele parece nervoso, está olhando para todos os lados.\""
+    g "Juliano? Ei! Tá tudo bem?"
+    narrador "Ele bloqueou a tela do celular rápido quando me viu chegando."
+    j "Ah, Guilherme. Oi."
+    g "Você parece preocupado. Aconteceu alguma coisa?"
+    j "Não é nada. Só umas mensagens idiotas."
+    g "Mensagens? De quem?"
+    narrador "Ele hesita um pouco. E depois de alguns segundos me mostra a tela do celular."
+    g "Espera... tão ameaçando você?"
+    j "É. Começou ontem à noite. Uma conta que eu nunca vi começou a mandar mensagens dizendo pra eu parar de falar sobre certas coisas."
+    g "Certas coisas? Você sabe do que tão falando?"
+    j "Acho que tem a ver com o que tenho investigado pro Jornal Universitário. Eu não falei nada demais, só repeti o que ouvi. Mas parece que alguém não gostou."
+    narrador "Eu li algumas das mensagens. O perfil não possui foto, publicações ou informações que permitam identificar o responsável."
+    g "Você reconhece esse perfil?"
+    j "Não. A conta é praticamente vazia. E, quando tentei responder, a pessoa apagou algumas mensagens e parou de falar comigo por um tempo."
+    g "Você guardou as mensagens anteriores?"
+    j "Algumas… Tirei print da tela antes que desaparecessem."
+    g "{=pensamento}\"Isso não parece uma simples brincadeira. Alguém quer impedir Juliano de falar. Mas o que exatamente ele sabe? E será que essa pessoa também tem alguma ligação com o que aconteceu com Ramon?\""
+    g "Juliano, precisamos tomar cuidado. Não apaga nada e não tenta confrontar essa pessoa sozinho."
+    j "Eu sei. Mas, sinceramente, tô começando a ficar com medo."
+    g "Vamos descobrir quem tá por trás disso. Só precisamos fazer as coisas direito."
+    g "{=pensamento}\"O desaparecimento do veterano, os ferimentos de Ramon e agora as ameaças contra Juliano...\""
+    g "{=pensamento}\"Talvez tudo isso esteja conectado. E, se estiver, alguém tá fazendo de tudo pra que a verdade não venha à tona.\""
