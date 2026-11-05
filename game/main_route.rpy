@@ -209,13 +209,13 @@ label main_route.scene_7:
     j_nvl "Parece que a situação foi bem séria."
     call close_phone from _call_close_phone
 
-    g "{=pensamento}\"Primeiro o desaparecimento do veterano, agora Ramón aparece machucado. E Juliano parece saber de alguma coisa. Preciso descobrir o que tá acontecendo..."
+    g "{=pensamento}\"Primeiro o desaparecimento do veterano, agora Ramón aparece machucado. E Juliano parece saber de alguma coisa. Preciso descobrir o que tá acontecendo...\""
 
 label main_route.scene_8:
     ## CENA 8:
     scene black with fade
 
-    g "{=pensamento}\"Tenho algumas opções. Posso tentar conversar com Ramón de novo, procurar Juliano pra entender o que ele sabe ou ir ao treino com Diego e pedir a ajuda dele."
+    g "{=pensamento}\"Tenho algumas opções. Posso tentar conversar com Ramón de novo, procurar Juliano pra entender o que ele sabe ou ir ao treino com Diego e pedir a ajuda dele.\""
 
     menu:
         "Encontrar Juliano e investigar as informações que ele recebeu":
